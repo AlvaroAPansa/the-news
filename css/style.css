@@ -1,0 +1,55 @@
+header{
+    margin: 0;
+    padding: 20px;
+    margin-left: 0px;
+    background-color: black;
+    font-family: 'Limelight', cursive;
+    color: white;
+}
+h1{
+    display: inline;
+    text-align: center;
+    font-size: 30px;
+}
+.highlight-news{
+    position: relative;
+}
+.icon-img{
+    padding: 3px;
+}
+.highlight-img{
+    width: 100%;
+}
+.highlight-title{
+    position: absolute;
+    bottom: 15px;
+    left: 5px;
+    padding: 5px;
+    font-family: 'PT Serif', serif;
+    font-size: 1.3em;
+    color: white;
+}
+.main-news{
+    display: flex;
+    padding: 5px 0 5px;
+}
+.main-img{
+    width: 35%;
+}
+.main-title{
+    align-self: center;
+    padding: 0px 5px;
+    font-family: 'PT Serif', serif;
+    height: 100%;
+}
+.secondary-news{
+    border-bottom: 2px solid #888;
+}
+.secondary-title{
+    font-family: 'PT Serif', serif;
+    padding: 20px 5px 5px 5px;
+}
+.secondary-description{
+    font-family: 'Piazzolla', serif;
+    padding: 5px 15px 20px 10px;
+}
