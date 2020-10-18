@@ -8,42 +8,64 @@
         <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
-        <!--Font links-->
+        <!--Font links end-->
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <header>
-            <img class="icon-img" src="img/menu.png" alt="Menu icon">
+            <span id="date"><time>October 18 2020</time></span>
             <h1>The News</h1>
-            <img class="icon-img" src="img/search.png" alt="Search icon">
+            <input id="search-box" type="text">
         </header>
+        <nav>
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Politics</a>
+            <a class="nav-link" href="#">Sports</a>
+            <a class="nav-link" href="#">Gaming</a>
+            <a class="nav-link" href="#">International</a>
+        </nav>
         <div class="container">
-            <main>
+            <main class="main-news-container">
                 <div class="highlight-news">
                     <figure>
                         <img class="highlight-img" src="img/armenia.jpg" alt="Armenia neighbourhood destroyed by explosions">
-                        <h2 class="highlight-title">Nagorno-Karabakh: Civilians hit amid Armenia Azerbaijan conflict</h2>                    
+                        <h2 class="highlight-title">Nagorno-Karabakh: Civilians hit amid Armenia Azerbaijan conflict</h2>
                     </figure>
                 </div>
                 <div class="main-news">
                     <img class="main-img" src="img/xbox.jpg" alt="Xbox Series X controller">
-                    <h3 class="main-title">Xbox Series X: the final preview</h3>
+                    <div class="main-title-description">
+                        <h3 class="main-title">Xbox Series X: the final preview</h3>
+                        <span class="main-description">Our most comprehensive look yet at Microsoft’s next-gen console</span> 
+                    </div>
                 </div>
                 <div class="main-news">
                     <img class="main-img" src="img/fires.jpg" alt="California’s woods on fire">
-                    <h3 class="main-title">Hours after refusing to help pay for California’s wildfire recovery, White House reverses course</h3>
+                    <div class="main-title-description">
+                        <h3 class="main-title">Hours after refusing to help pay for California’s wildfire recovery, White House reverses course</h3>
+                        <span class="main-description">Trump administration rejects, then approves, emergency aid for California fires, including biggest blaze in state history</span> 
+                    </div>
                 </div>
                 <div class="main-news">
                     <img class="main-img" src="img/biden.jpg" alt="Biden at the ABC studio">
-                    <h3 class="main-title">Biden’s ABC town hall ratings beat Trump’s three-network NBC event</h3>
+                    <div class="main-title-description">
+                        <h3 class="main-title">Biden’s ABC town hall ratings beat Trump’s three-network NBC event</h3>
+                        <span class="main-description">The final Nielsen data includes streaming as well as broadcast figures on thursday night's rival shows</span>
+                    </div>
                 </div>
                 <div class="main-news">
                     <img class="main-img" src="img/messi.jpg" alt="Messi flanked by two bolivian players">
-                    <h3 class="main-title">Snarling skipper Messi sets tone for Argentina</h3>
+                    <div class="main-title-description">
+                        <h3 class="main-title">Snarling skipper Messi sets tone for Argentina</h3>
+                        <span class="main-description">Lionel Messi was back to his vociferous best this week, and the Albiceleste captain's transformation from shrinking violet to snarling porteño cabbie stuck in rush hour traffic has been gestating for some time now.</span>
+                    </div>
                 </div>
             </main>
-            <aside>
+            <div class="advertising">
+                <span>Adventising Space</span>
+            </div>
+            <aside class="secondary-news-container">
                 <div class="secondary-news">
                     <h4 class="secondary-title">Why the coronavirus is killing more men than women</h4>
                     <p class="secondary-description">Men have weaker immune systems that, in some cases, may actually sabotage the body’s response to an invader. But social and cultural factors may also play a role.</p>
@@ -61,13 +83,6 @@
                     <p class="secondary-description">Find out every spooky TV special, marathon, and more premiering throughuot the month of october and leading up to Halloween.</p>
                 </div>
             </aside>
-            <div class="subscription-form">
-                <form action="#">
-                    <input type="text" name="name" id="name">
-                    <input type="text" name="email" id="email">
-                    <button type="submit">subscruibe</button>
-                </form>
-            </div>
         </div>
         <footer>
             <h5>&COPY;2020 The News</h5>

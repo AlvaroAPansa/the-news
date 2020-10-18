@@ -1,21 +1,41 @@
 header{
-    margin: 0;
     padding: 20px;
-    margin-left: 0px;
-    background-color: black;
+    background-color: #000;
     font-family: 'Limelight', cursive;
     color: white;
+    text-align: center;
 }
 h1{
     display: inline;
     text-align: center;
     font-size: 30px;
 }
+nav{
+    display: none;
+}
+footer{
+    padding: 15px;
+    background-color: #000;
+    font-family: 'Limelight', cursive;
+    font-size: 15px;
+    color: white;
+}
+#date{
+    display:none
+}
+#search-box{
+    display: none;
+}
 .highlight-news{
     position: relative;
 }
-.icon-img{
-    padding: 3px;
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.main-news-container{
+    display: flex;
+    flex-direction: column;
 }
 .highlight-img{
     width: 100%;
@@ -26,7 +46,7 @@ h1{
     left: 5px;
     padding: 5px;
     font-family: 'PT Serif', serif;
-    font-size: 1.3em;
+    font-size: 20px;
     color: white;
 }
 .main-news{
@@ -34,13 +54,31 @@ h1{
     padding: 5px 0 5px;
 }
 .main-img{
-    width: 35%;
+    flex: 30%;
+    align-self: center;
+    width: 30%;
+}
+.main-title-description{
+    display: flex;
+    flex-direction: column;
+    flex: 70%;
+    justify-content: space-around;
 }
 .main-title{
-    align-self: center;
     padding: 0px 5px;
     font-family: 'PT Serif', serif;
-    height: 100%;
+}
+.main-description{
+    padding: 0px 5px;
+    font-family: 'Piazzolla', serif;
+}
+.advertising{
+    border: 10px solid #f00;
+}
+.secondary-news-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .secondary-news{
     border-bottom: 2px solid #888;
@@ -52,4 +90,15 @@ h1{
 .secondary-description{
     font-family: 'Piazzolla', serif;
     padding: 5px 15px 20px 10px;
+}
+@media only screen and (min-width: 768px){
+    nav{
+        display: block;
+    }
+    #date{
+        display: inline;
+    }
+    #search-box{
+        display: inline;
+    }
 }
