@@ -1,4 +1,8 @@
 header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
     background-color: #000;
     font-family: 'Limelight', cursive;
@@ -6,12 +10,14 @@ header{
     text-align: center;
 }
 h1{
-    display: inline;
-    text-align: center;
     font-size: 30px;
 }
 nav{
     display: none;
+    background-color: #888;
+    font-family: 'Limelight', cursive;
+    color: white;
+    padding: 10px;
 }
 footer{
     padding: 15px;
@@ -21,10 +27,16 @@ footer{
     color: white;
 }
 #date{
-    display:none
+    display:none;
+    font-family: 'Piazzolla', serif;
 }
 #search-box{
     display: none;
+}
+.nav-link{
+    width: 20%;
+    color: white;
+    text-decoration: none;
 }
 .highlight-news{
     position: relative;
@@ -93,12 +105,40 @@ footer{
 }
 @media only screen and (min-width: 768px){
     nav{
-        display: block;
+        display: flex;
     }
     #date{
         display: inline;
     }
     #search-box{
         display: inline;
+    }
+    .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .main-news-container{
+        flex: 70%;
+    }
+    .secondary-news-container{
+        flex: 30%;
+        order: 1;
+    }
+    .advertising{
+        flex: 100%;
+        order: 2;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .main-news-container{
+        flex: 50%;
+    }
+    .secondary-news-container{
+        flex: 30%;
+        order: 1;
+    }
+    .advertising{
+        flex: 10%;/*With 20% the 3 elements don't fit in the width*/
+        order: -1;
     }
 }
