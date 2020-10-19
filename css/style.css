@@ -19,6 +19,9 @@ nav{
     color: white;
     padding: 10px;
 }
+a.title-link:hover{
+    text-decoration: underline;
+}
 footer{
     padding: 15px;
     background-color: #000;
@@ -76,6 +79,10 @@ footer{
     flex: 70%;
     justify-content: space-around;
 }
+a.title-link{
+    color: #000;
+    text-decoration: none;
+}
 .main-title{
     padding: 0px 5px;
     font-family: 'PT Serif', serif;
@@ -99,16 +106,19 @@ footer{
     font-family: 'PT Serif', serif;
     padding: 20px 5px 5px 5px;
 }
-.secondary-description{
+/*.secondary-description{
     font-family: 'Piazzolla', serif;
     padding: 5px 15px 20px 10px;
-}
+}*/
 @media only screen and (min-width: 768px){
     nav{
         display: flex;
     }
     #date{
         display: inline;
+    }
+    #menu-icon{
+        display: none;
     }
     #search-box{
         display: inline;
