@@ -1,8 +1,8 @@
-# The Nwes Frontpage
+# The News Frontpage
 **Week  3 (Responsive Web Design)**
 
-This project is the development of a newspaper frontpage made resposive by the use of FlexBox and Media Queries.
-The following break point were used:
+This project consists in developing a newspaper frontpage and make it resposive with FlexBox and Media Queries.
+The following break points are used:
 * 768px and below (Cellphones)
 * 768px-1024px (Tablets and laptops)
 * 1024px and above (Desktop) 

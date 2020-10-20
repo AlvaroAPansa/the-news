@@ -5,9 +5,8 @@ header{
     align-items: center;
     padding: 20px;
     background-color: #000;
-    font-family: 'Limelight', cursive;
+    font-family: 'Limelight', cursive, Verdana, Geneva, sans-serif;
     color: white;
-    text-align: center;
 }
 h1{
     font-size: 30px;
@@ -15,12 +14,9 @@ h1{
 nav{
     display: none;
     background-color: #888;
-    font-family: 'Limelight', cursive;
+    font-family: 'Limelight', cursive, Verdana, Geneva, sans-serif;
     color: white;
     padding: 10px;
-}
-a.title-link:hover{
-    text-decoration: underline;
 }
 footer{
     padding: 15px;
@@ -31,18 +27,19 @@ footer{
 }
 #date{
     display:none;
-    font-family: 'Piazzolla', serif;
+    font-family: 'Piazzolla', serif, Verdana, Geneva, sans-serif;
+}
+.search-container{
+    display: flex;
+    align-content: center;
 }
 #search-box{
     display: none;
+    width: 90px;
 }
 .nav-link{
-    width: 20%;
     color: white;
     text-decoration: none;
-}
-.highlight-news{
-    position: relative;
 }
 .container{
     display: flex;
@@ -52,6 +49,9 @@ footer{
     display: flex;
     flex-direction: column;
 }
+.highlight-news{
+    position: relative;
+}
 .highlight-img{
     width: 100%;
 }
@@ -60,13 +60,14 @@ footer{
     bottom: 15px;
     left: 5px;
     padding: 5px;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Serif', serif, Verdana, Geneva, sans-serif;
     font-size: 20px;
     color: white;
 }
 .main-news{
     display: flex;
     padding: 5px 0 5px;
+    margin-bottom: 10px;
 }
 .main-img{
     flex: 30%;
@@ -77,19 +78,22 @@ footer{
     display: flex;
     flex-direction: column;
     flex: 70%;
-    justify-content: space-around;
+    justify-content: center;
 }
 a.title-link{
     color: #000;
     text-decoration: none;
 }
+a.title-link:hover{
+    text-decoration: underline;
+}
 .main-title{
-    padding: 0px 5px;
-    font-family: 'PT Serif', serif;
+    padding: 0px 5px 5px 5px;
+    font-family: 'PT Serif', serif, Verdana, Geneva, sans-serif;
 }
 .main-description{
     padding: 0px 5px;
-    font-family: 'Piazzolla', serif;
+    font-family: 'Piazzolla', serif, Verdana, Geneva, sans-serif;
 }
 .advertising{
     border: 10px solid #f00;
@@ -97,22 +101,21 @@ a.title-link{
 .secondary-news-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 .secondary-news{
+    display: flex;
+    align-items: center;
+    flex: 16%;/*To distribute the elements across the height of the webpage*/
     border-bottom: 2px solid #888;
 }
-.secondary-title{
+.secondary-news h4{
     font-family: 'PT Serif', serif;
-    padding: 20px 5px 5px 5px;
+    padding: 10px;
 }
-/*.secondary-description{
-    font-family: 'Piazzolla', serif;
-    padding: 5px 15px 20px 10px;
-}*/
 @media only screen and (min-width: 768px){
     nav{
         display: flex;
+        justify-content: space-between;
     }
     #date{
         display: inline;
