@@ -155,3 +155,41 @@ a.title-link:hover{
         order: -1;
     }
 }
+
+/* Subscription styles */
+input{
+    width: 100%;
+}
+#subscription-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+#form-title{
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'PT Serif', serif, Verdana, Geneva, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.form-input{
+    margin: 5px 10px 20px;
+    flex-basis: 450px;
+}
+.input-title{
+    margin-bottom: 3px;
+    font-size: 15px;
+    font-family: 'PT Serif', serif, Verdana, Geneva, sans-serif;
+}
+.form-button{
+    justify-self: center;
+    align-self: center;
+    flex-basis: 450px;
+}
+.form-button input{
+    margin: 0px 10px;
+    font-family: 'PT Serif', serif, Verdana, Geneva, sans-serif;
+    font-weight: bold;
+}
