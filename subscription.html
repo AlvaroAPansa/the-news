@@ -14,7 +14,7 @@
         <!--Resources links end-->
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
-        <script src="js/subscription.js"></script>
+        <script src="js/subscription.js" defer></script><!--Without defer the script can't find the elements-->
     </head>
     <body>
         <header>
@@ -57,12 +57,12 @@
         </nav>
         <main>
             <form id="subscription-form" action="Submit">
-                <h2 id="form-title">
+                <h2 id='form-title'>
                     Subscription Form
                 </h2>
                 <div class="form-input">
                     <h3 class="input-title">
-                        Full name
+                        Full Name
                     </h3>
                     <input id="full-name" type="text">
                 </div>
