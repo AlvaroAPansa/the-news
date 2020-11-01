@@ -112,3 +112,119 @@ function phoneValidation (e){
     }
 }
 //Address validation
+var address = document.getElementById('address');
+address.addEventListener('blur', addressValidation);
+function addressValidation(e){
+    var addressString = e.target.value;
+    var addressLength = addressString.length;//At least 5
+    var spaceIndex = addressString.indexOf(' ');
+    var char;
+    var letterConfirmation = false;//To check if the string has a letter
+    var numberConfirmation = false;//To check if the string has a number
+    for (let i = 0; i < addressLength; i++) {
+        char = addressString[i];
+        if (char >= '0' && char <= '9') {
+            numberConfirmation = true;
+        } else if (char >= 'a' && char <= 'z') {
+            letterConfirmation = true;
+        } else if (char >= 'A' && char <= 'Z') {
+            letterConfirmation = true;
+        }
+    }
+    if (addressLength >= 5 && (spaceIndex >0 && spaceIndex < addressLength-1) && letterConfirmation && numberConfirmation){
+        console.log('address OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Insert a valid address. Street and number separed by a space.');
+        errorField.appendChild(errorText);
+    }
+}
+//City validation (At least 3 characters with letters)
+var city = document.getElementById('city');
+city.addEventListener('blur', cityValidation);
+function cityValidation(e){
+    var cityString = e.target.value;
+    var cityLength = cityString.length;//At least 3
+    var letterConfirmation = false;
+    var char;
+    for (let i = 0; i < cityLength; i++) {
+        char = cityString[i];
+        if (char >= 'a' && char <= 'z') {
+            letterConfirmation = true;
+        } else if (char >= 'A' && char <= 'Z') {
+            letterConfirmation = true;
+        }
+    }
+    if (cityLength >= 3 && letterConfirmation){
+        console.log('city OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Insert a valid city.');
+        errorField.appendChild(errorText);
+    }
+}
+//Zip Code Validation (At least 3 characters with at least one number)
+var zipCode = document.getElementById('zip-code');
+zipCode.addEventListener('blur', zipCodeValidation);
+function zipCodeValidation(e){
+    var zipCodeString = e.target.value;
+    var zipCodeLength = zipCodeString.length;//At least 3
+    var numberConfirmation = false;//To check if the string has a number
+    for (let i = 0; i < zipCodeLength; i++) {
+        char = zipCodeString[i];
+        if (char >= '0' && char <= '9') {
+            numberConfirmation = true;
+        }
+    }
+    if (zipCodeLength >= 3 && numberConfirmation){
+        console.log('zip code OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Insert a valid Zip Code.');
+        errorField.appendChild(errorText);
+    }
+}
+//Personal ID validation (Only numbers, 7 or 8 digits)
+var personalId = document.getElementById('personal-id');
+personalId.addEventListener('blur', personalIdValidation);
+var numberConfirmation = false;//To check if the string has a number
+var othersConfirmation = false;//To check if the string has other characters
+var char;
+function personalIdValidation (e) {
+    var personalIdString = e.target.value;
+    var personalIdLength = personalIdString.length;
+    for (let i = 0; i < personalIdLength; i++) {
+        char = personalIdString[i];
+        if (char >= '0' && char <= '9') {
+            numberConfirmation = true;
+        } else {
+            othersConfirmation = true;
+        }
+    }
+    console.log(personalIdLength);
+    console.log(personalIdLength === 7);
+    if ((personalIdLength === 7 || personalIdLength === 8) && numberConfirmation && !othersConfirmation){
+        console.log('personal id OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Insert a valid Personal ID.');
+        errorField.appendChild(errorText);
+    }
+}
+//Focus event to eliminate error message
+fullName.addEventListener('focus', eliminateError);
+email.addEventListener('focus', eliminateError);
+password.addEventListener('focus', eliminateError);
+repeatPassword.addEventListener('focus', eliminateError);
+age.addEventListener('focus', eliminateError);
+phone.addEventListener('focus', eliminateError);
+address.addEventListener('focus', eliminateError);
+city.addEventListener('focus', eliminateError);
+zipCode.addEventListener('focus', eliminateError);
+personalId.addEventListener('focus', eliminateError);
+function eliminateError (e){
+    var errorField = e.target.nextElementSibling;
+    //console.log(errorField);
+    errorField.removeChild(errorField.firstChild);
+    //errorField.removeChild(errorText);
+}
