@@ -75,7 +75,7 @@ function passwordConfirmation (e){
         errorField.appendChild(errorText); 
     }
 }
-//Age confirmation
+//Age validation
 var age = document.getElementById('age');
 age.addEventListener('blur', ageValidation);
 function ageValidation (e){
@@ -88,3 +88,27 @@ function ageValidation (e){
         errorField.appendChild(errorText); 
     }
 }
+//Phone validation
+var phone = document.getElementById('phone');
+phone.addEventListener('blur', phoneValidation);
+function phoneValidation (e){
+    var phoneNumber = e.target.value;
+    var phoneLength = phoneNumber.length;
+    var char;
+    var othersConfirmation = false;//To check if the string has other characters
+    for (let i = 0; (i < phoneLength && othersConfirmation === false) ; i++) {
+        char = phoneNumber[i];
+        console.log(!(char >= '0' && char <= '9'));
+        if (!(char >= '0' && char <= '9')) {
+            othersConfirmation = true;
+        }
+    }
+    if (phoneLength >= 7 && othersConfirmation == false) {
+        console.log('phone OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Insert a valid phone. Only numbers ( no (), - or spaces).');
+        errorField.appendChild(errorText); 
+    }
+}
+//Address validation
