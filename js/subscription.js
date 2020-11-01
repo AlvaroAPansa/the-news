@@ -1,5 +1,5 @@
 //Full Name Validation
-var fullName = document.getElementById("full-name");
+var fullName = document.getElementById('full-name');
 fullName.addEventListener('blur', nameValidation);
 function nameValidation(e){
     var name = e.target.value;
@@ -14,7 +14,7 @@ function nameValidation(e){
     }
 }
 //Email validation
-var email = document.getElementById("email");
+var email = document.getElementById('email');
 email.addEventListener('blur', emailValidation);
 function emailValidation(e){
     var mailAddress = e.target.value;
@@ -31,5 +31,60 @@ function emailValidation(e){
         var errorField = e.target.nextElementSibling;
         var errorText = document.createTextNode('Insert a correct email.');
         errorField.appendChild(errorText);
+    }
+}
+//Password validation
+var password = document.getElementById('password');
+password.addEventListener('blur', passwordValidation);
+function passwordValidation(e){
+    var passwordString = e.target.value;
+    var passwordLength = passwordString.length;//At least 8
+    var char;
+    var letterConfirmation = false;//To check if the string has a letter
+    var numberConfirmation = false;//To check if the string has a number
+    var othersConfirmation = false;//To check if the string has other characters
+    for (let i = 0; i < passwordLength; i++) {
+        char = passwordString[i];
+        if (char >= '0' && char <= '9') {
+            numberConfirmation = true;
+        } else if (char >= 'a' && char <= 'z') {
+            letterConfirmation = true;
+        } else if (char >= 'A' && char <= 'Z') {
+            letterConfirmation = true;
+        } else {
+            othersConfirmation = true;
+        }
+    }
+    if (passwordLength >= 8 && numberConfirmation && letterConfirmation && !othersConfirmation){
+        console.log('password OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('The password must contain at least 8 characters only with letters and numbers.');
+        errorField.appendChild(errorText);
+    }
+}
+//Password confirmation
+var repeatPassword = document.getElementById('repeat-password');
+repeatPassword.addEventListener('blur', passwordConfirmation);
+function passwordConfirmation (e){
+    if (e.target.value === password.value){
+        console.log('password confirmation OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Passwords do not match.');
+        errorField.appendChild(errorText); 
+    }
+}
+//Age confirmation
+var age = document.getElementById('age');
+age.addEventListener('blur', ageValidation);
+function ageValidation (e){
+    var ageNumber = e.target.value;
+    if (ageNumber >= 18 && (ageNumber % 1 === 0) && ageNumber <= 150) {
+        console.log('age OK');
+    } else {
+        var errorField = e.target.nextElementSibling;
+        var errorText = document.createTextNode('Insert a valid age above 17.');
+        errorField.appendChild(errorText); 
     }
 }
