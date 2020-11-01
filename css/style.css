@@ -183,6 +183,10 @@ input{
     font-size: 15px;
     font-family: 'PT Serif', serif, Verdana, Geneva, sans-serif;
 }
+.input-error{
+    font-family: 'Piazzolla', serif, Verdana, Geneva, sans-serif;
+    color: #f33;
+}
 .form-button{
     justify-self: center;
     align-self: center;
