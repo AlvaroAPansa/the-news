@@ -267,7 +267,6 @@ function eliminateError (e){
 }
 //Submit alert
 var submitButton = document.getElementById('submit-button');
-//console.log(submitButton);
 submitButton.addEventListener('click', submitAlert);
 var errorName = 'Insert a correct name. Name and surname with a space in between.';
 var errorEmail = 'Insert a correct email.';
@@ -287,11 +286,15 @@ function submitAlert (e){
         alert('Name: '+name+'\nEmail: '+mailAddress+'\nAge: '+ageNumber+'\nPhone: '+phoneNumber+'\nAddress: '+addressString+'\nCity: '+cityString+'\nZip Code: '+zipCodeString+'\nPersonal ID: '+personalIdString);
     } else {
         for (let i = 0; i < confirmationArray.length; i++) {
-            console.log(confirmationArray[i]);
             if (confirmationArray[i] === false) {
                 errorAlertString += ('\n'+(i+1)+'- '+errorArray[i]);
             }
         }
         alert(errorAlertString);
     }
+}
+///Bonus. Hello user
+fullName.addEventListener('keyup', nameGenerator);
+function nameGenerator (e){
+    document.getElementById('hello').innerHTML = '<h2>Hello '+e.target.value+'<h2>';
 }
