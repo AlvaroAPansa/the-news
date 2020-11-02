@@ -282,7 +282,7 @@ var errorArray = [errorName, errorEmail, errorPassword, errorPasswordConfirmatio
 function submitAlert (e){
     var confirmationArray = [nameConfirm, emailConfirm, passwordConfirm, passwordConfirmationConfirm, ageConfirm, 
         phoneConfirm, addressConfirm, cityConfirm, zipCodeConfirm, personalIdConfirm];
-    var errorAlertString = 'Corect the following: ';
+    var errorAlertString = 'Correct the following: ';
     if (nameConfirm && emailConfirm && passwordConfirm && passwordConfirmationConfirm && ageConfirm && phoneConfirm 
         && addressConfirm && cityConfirm && zipCodeConfirm && personalIdConfirm){
         alert('Name: '+name+'\nEmail: '+mailAddress+'\nAge: '+ageNumber+'\nPhone: '+phoneNumber+'\nAddress: '
