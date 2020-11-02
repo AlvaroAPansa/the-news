@@ -24,11 +24,10 @@ var emailConfirm = false;
 var mailAddress;
 function emailValidation(e){
     mailAddress = e.target.value;
-    var mailLength = mailAddress.length;
     var atIndex = mailAddress.indexOf('@');//-1 when no space, 0 at the beginning
     var mailDomain = mailAddress.substring(atIndex+1);
     var domainLength = mailDomain.length;//At least 4 characters after the @
-    var domainDotIndex = mailDomain.indexOf('.');//At least 1 charecter between the @and the .
+    var domainDotIndex = mailDomain.indexOf('.');//At least 1 charecter between the @ and the .
     var tldLength = domainLength - domainDotIndex;//Different top domain length allowed 3 (.co), 4 (.com), 7 (.com.ar)
     if (atIndex >= 1 && domainLength >= 4 && domainDotIndex >= 1 &&
         (tldLength === 3 || tldLength === 4 || tldLength === 7)) {
@@ -278,12 +277,16 @@ var errorAddress = 'Insert a valid address. Street and number separed by a space
 var errorCity = 'Insert a valid city.';
 var errorZipCode = 'Insert a valid Zip Code.';
 var errorPersonalId = 'Insert a valid Personal ID.';
-var errorArray = [errorName, errorEmail, errorPassword, errorPasswordConfirmation, errorAge, errorPhone, errorAddress, errorCity, errorZipCode, errorPersonalId];
+var errorArray = [errorName, errorEmail, errorPassword, errorPasswordConfirmation, errorAge, errorPhone, errorAddress, 
+    errorCity, errorZipCode, errorPersonalId];
 function submitAlert (e){
-    var confirmationArray = [nameConfirm, emailConfirm, passwordConfirm, passwordConfirmationConfirm, ageConfirm, phoneConfirm, addressConfirm, cityConfirm, zipCodeConfirm, personalIdConfirm];
+    var confirmationArray = [nameConfirm, emailConfirm, passwordConfirm, passwordConfirmationConfirm, ageConfirm, 
+        phoneConfirm, addressConfirm, cityConfirm, zipCodeConfirm, personalIdConfirm];
     var errorAlertString = 'Corect the following: ';
-    if (nameConfirm && emailConfirm && passwordConfirm && passwordConfirmationConfirm && ageConfirm && phoneConfirm && addressConfirm && cityConfirm && zipCodeConfirm && personalIdConfirm){
-        alert('Name: '+name+'\nEmail: '+mailAddress+'\nAge: '+ageNumber+'\nPhone: '+phoneNumber+'\nAddress: '+addressString+'\nCity: '+cityString+'\nZip Code: '+zipCodeString+'\nPersonal ID: '+personalIdString);
+    if (nameConfirm && emailConfirm && passwordConfirm && passwordConfirmationConfirm && ageConfirm && phoneConfirm 
+        && addressConfirm && cityConfirm && zipCodeConfirm && personalIdConfirm){
+        alert('Name: '+name+'\nEmail: '+mailAddress+'\nAge: '+ageNumber+'\nPhone: '+phoneNumber+'\nAddress: '
+        +addressString+'\nCity: '+cityString+'\nZip Code: '+zipCodeString+'\nPersonal ID: '+personalIdString);
     } else {
         for (let i = 0; i < confirmationArray.length; i++) {
             if (confirmationArray[i] === false) {
