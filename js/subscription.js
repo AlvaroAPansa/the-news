@@ -12,8 +12,7 @@ function nameValidation(e){
         nameConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a correct name. Name and surname with a space in between.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         nameConfirm = false;
     }
 }
@@ -35,8 +34,7 @@ function emailValidation(e){
         emailConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a correct email.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         emailConfirm = false;
     }
 }
@@ -69,8 +67,7 @@ function passwordValidation(e){
         passwordConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('The password must contain at least 8 characters only with letters and numbers.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         passwordConfirm = false;
     }
 }
@@ -87,8 +84,7 @@ function passwordConfirmation (e){
         passwordConfirmationConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Passwords do not match.');
-        errorField.appendChild(errorText); 
+        errorField.classList.remove('hidden');
         passwordConfirmationConfirm = false;
     }
 }
@@ -104,8 +100,7 @@ function ageValidation (e){
         ageConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a valid age above 17.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         ageConfirm = false;
     }
 }
@@ -130,8 +125,7 @@ function phoneValidation (e){
         phoneConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a valid phone. Only numbers ( no (), - or spaces).');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         phoneConfirm = false;
     }
 }
@@ -162,8 +156,7 @@ function addressValidation(e){
         addressConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a valid address. Street and number separed by a space.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         addressConfirm = false;
     }
 }
@@ -190,8 +183,7 @@ function cityValidation(e){
         cityConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a valid city.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         cityConfirm = false;
     }
 }
@@ -215,8 +207,7 @@ function zipCodeValidation(e){
         zipCodeConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a valid Zip Code.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         zipCodeConfirm = false;
     }
 }
@@ -224,13 +215,13 @@ function zipCodeValidation(e){
 var personalId = document.getElementById('personal-id');
 personalId.addEventListener('blur', personalIdValidation);
 var personalIdConfirm = false;
-var numberConfirmation = false;//To check if the string has a number
-var othersConfirmation = false;//To check if the string has other characters
 var char;
 var personalIdString;
 function personalIdValidation (e) {
     personalIdString = e.target.value;
     var personalIdLength = personalIdString.length;
+    var numberConfirmation = false;//To check if the string has a number
+    var othersConfirmation = false;//To check if the string has other characters
     for (let i = 0; i < personalIdLength; i++) {
         char = personalIdString[i];
         if (char >= '0' && char <= '9') {
@@ -244,8 +235,7 @@ function personalIdValidation (e) {
         personalIdConfirm = true;
     } else {
         var errorField = e.target.nextElementSibling;
-        var errorText = document.createTextNode('Insert a valid Personal ID.');
-        errorField.appendChild(errorText);
+        errorField.classList.remove('hidden');
         personalIdConfirm = false;
     }
 }
@@ -262,7 +252,7 @@ zipCode.addEventListener('focus', eliminateError);
 personalId.addEventListener('focus', eliminateError);
 function eliminateError (e){
     var errorField = e.target.nextElementSibling;
-    errorField.removeChild(errorField.firstChild);
+    errorField.classList.add('hidden');
 }
 //Submit alert
 var submitButton = document.getElementById('submit-button');

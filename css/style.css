@@ -187,6 +187,9 @@ input{
     font-family: 'Piazzolla', serif, Verdana, Geneva, sans-serif;
     color: #f33;
 }
+.hidden{
+    display: none;
+}
 .form-button{
     justify-self: center;
     align-self: center;
